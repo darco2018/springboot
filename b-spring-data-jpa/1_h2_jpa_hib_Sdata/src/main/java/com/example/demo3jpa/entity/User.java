@@ -12,13 +12,7 @@ public class User {
     private long id;
     private String name;
     private String role;
-
-    public int getAge() {
-        return age;
-    }
-
     private int age;
-
 
     // skip id from constructor
     public User(String name, String role) {
@@ -34,6 +28,10 @@ public class User {
 
     // JPA expects a default constructor !!!!!
     protected User() {
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public long getId() {

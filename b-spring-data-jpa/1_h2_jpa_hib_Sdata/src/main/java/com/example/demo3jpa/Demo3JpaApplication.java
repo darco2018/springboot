@@ -36,7 +36,7 @@ public class Demo3JpaApplication {
 	@Bean
 	CommandLineRunner commandLineRunner() {
 		return args ->
-				System.out.println("CommandLineRunner with args:"
+				System.out.println("------------------- starting CommandLineRunner with args:"
 						+ Arrays.toString(args));
 	}
 
@@ -44,8 +44,6 @@ public class Demo3JpaApplication {
 
 	/* Spring Data: (SpringData JPA - specific implementation)
 	* You create interfaces & Spring Data will create their implementation
-	*
-	*
 	* */
 
 }
