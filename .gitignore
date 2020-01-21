@@ -1,6 +1,7 @@
 ### custom
-.directory
-.git
+*.directory
+*.git
+**/target
 
 
 HELP.md
