@@ -18,10 +18,10 @@ public class UserServiceDaoCLRunner implements CommandLineRunner {
     private static Logger logger = LoggerFactory.getLogger(UserServiceDaoCLRunner.class);
 
     @Override
-    public void run(String... args) throws Exception {
-        User user = new User("Jack","Admin");
+    public void run(String... args)  {
+        User user = new User("Jack From-UserServiceDaoCLRunner","Admin");
         long id = userDAOService.insert(user);
-        logger.info("New user created: " + user); // user.toString() is called
+        logger.info("New user created by UserServiceDaoCLRunner: " + user); // user.toString() is called
     }
 }
 

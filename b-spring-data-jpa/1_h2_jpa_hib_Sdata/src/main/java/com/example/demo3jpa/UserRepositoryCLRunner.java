@@ -22,20 +22,26 @@ public class UserRepositoryCLRunner implements CommandLineRunner {
     private UserRepository userRepository;
 
     @Override
-    public void run(String... args) throws Exception {
-        logger.info("Application started with command-line arguments: {} . \n " +
-                "To kill this application, " +
-                "press Ctrl + C.", Arrays.toString(args));
+    public void run(String... args)  {
+        logger.info("@@@@@@@@ ------ Application started with command-line arguments: {} . \n " +
+                "To kill this application, press Ctrl + C.", Arrays.toString(args));
 
-
-        User user = new User("Randolph", "Dev");
+        // Operation 1: save ------------------------------------------
+        User user = new User("Randolph From-UserRepositoryCLRunner", "Dev");
         // returns user;  save() can be used for create & update
-        userRepository.save(user); // JpaRepository doesnt have persist() method
-        logger.info("New user created: " + user); // user.toString() is called
+        user = userRepository.save(user); // JpaRepository doesnt have persist() method
+        logger.info("New user created by UserRepositoryCLRunner: " + user); // user.toString() is called
 
+
+        // operation 2: findById --------------------------------------
         Optional<User> found = userRepository.findById(1L);
-        logger.info("------------------ User retrieved with findById(): " + found);
+        logger.info("------------------ User retrieved with findById(): " + found); // Optional[User{id=1, name='Jack'}]
 
+        Optional<User> notFound = userRepository.findById(5L);
+        logger.info("------------------ User NOT retrieved with findById(): " + notFound); // Optional.empty
+
+
+        // operation 3: findAll --------------------------------------
         List<User> users = userRepository.findAll();
         users.forEach(u -> System.out.println("---------xyz----------> " + u));
         users.forEach(System.out::println);

@@ -9,10 +9,10 @@ public class User {
     // primary key
     @Id
     @GeneratedValue // automatic generation
-    private long id;
-    private String name;
-    private String role;
-    private int age;
+    private long id; // bigint not null  primary key (id))
+    private String name; // varchar(255)
+    private String role; // varchar(255)
+    private int age; // integer not null
 
     // skip id from constructor
     public User(String name, String role) {
