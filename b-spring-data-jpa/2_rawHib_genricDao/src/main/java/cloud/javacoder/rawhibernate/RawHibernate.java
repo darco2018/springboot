@@ -13,12 +13,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // if you remove @SpringBootApplication & SpringApplication.run(SpringdatajpaApplication.class, args),
-// the app will run ok but terminate & you won't be able to view H2 console. What really keeps it up is springboot-web dep (with server)
+// the app will run ok but terminate & you won't be able to view H2 console.
+// What really keeps it up is springboot-web dep (with server)
 @SpringBootApplication
 public class RawHibernate{
 
 	/* this program shows an abstract dao class with concrete methods, which are shared
-	by both subclasses (TeacherDao & Course Dao*/
+	by both subclasses (TeacherDao & CourseDao*/
 
 	// it as a RAW hibernate example. Note the use od hibernate.cfg.xml
 	/* Hibernate:
@@ -69,6 +70,6 @@ public class RawHibernate{
 			}
 		}
 	}
-	// ACID: Atomic Consisten Isolated Durable
+	// ACID: Atomic Consistent Isolated Durable
 	// atomic - not influenced by other operations
 }
