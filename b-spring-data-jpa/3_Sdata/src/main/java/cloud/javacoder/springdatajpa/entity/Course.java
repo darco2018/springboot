@@ -2,23 +2,23 @@ package cloud.javacoder.springdatajpa.entity;
 
 import javax.persistence.*;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data  // getters, setters, toString
 @NoArgsConstructor
 @RequiredArgsConstructor // id excluded; requires are those annotated with @NonNull
+@AllArgsConstructor
 
 @Entity
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     @NonNull private String name;
-    @NonNull private int workload;
-    @NonNull private int rate;
+
+    @NonNull private Integer workload; // @NonNull is meaningless on a primitive
+    @NonNull private Integer rate; //  is meaningless on a primitive
 
     @NonNull
     // Many Courses to One Teacher
